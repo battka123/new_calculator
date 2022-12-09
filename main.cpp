@@ -9,7 +9,7 @@ int main(int argc, char *argv[]) {
             << "    \t\t-Instruction-\n"
                "\t-The program works correctly if the correct operations are entered!-\n"
                "\t-Calculator with brackets can:\n"
-               "+,-,*,/,^,sqrt,sin,cos,tan,ctg,exp.-\n";
+               "+,-,*,/,^,sqrt,sin,cos,tan,ctg,exp and has numbers: pi, e. -\n";
 
     std::string str = argv[1]; // считываем введённую строку
     str += "#";
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     for (char symbol: str) {
         if (symbol == 'x') {
             std::cout << "Enter x: ";
-             std::cin >> x;
+            std::cin >> x;
             break;
         }
     }
@@ -39,10 +39,12 @@ int main(int argc, char *argv[]) {
         }
 
     }
-    action.pop();
-    if (!buf_operacia.empty() || !buf_chislo.empty() || !action.empty() || numbers.size()!=1){
-        std::cerr<<"The expression is entered incorrectly!";
+    action.pop(); //Удаляю решётку
+    //При неправильном вводе
+    if (!buf_operacia.empty() || !buf_chislo.empty() || !action.empty() || numbers.size() != 1) {
+        std::cerr << "The expression is entered incorrectly!";
         return 0;
     }
-    std::cout<<numbers.top();numbers.pop();
+    std::cout << numbers.top();//Вывод ответа
+    numbers.pop();
 }

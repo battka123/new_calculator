@@ -1,6 +1,6 @@
 #include "header.hpp"
 
-void  Pushcifra(std::string &str, size_t &symbol, std::stack<float>& numbers, std::string& buf_chislo){
+void Pushcifra(std::string &str, size_t &symbol, std::stack<float> &numbers, std::string &buf_chislo) {
 
 
     //Добавляем эту цифру в стоку "chislo", которая определит число не из одного символа
